@@ -63,22 +63,15 @@ void printStudentData(student students[], int index)
 int binaryFindStudentByMatricula(student students[], int numberOfStudents, int matricula)
 {
     int firstIndex = 0;
-    int lastIndex = numberOfStudents;
+    int lastIndex = numberOfStudents - 1;
     int halfIndex;
     int executions = 0;
 
     halfIndex = (firstIndex + lastIndex) / 2;
-
     // Loop de busca binaria
-    while (students[halfIndex].matricula != matricula)
-    {
-        // Verifica se o numero de execucoes atingiu o limite de alunos
-        if (executions == numberOfStudents)
-        {
-            cout << "Fim :(" << endl;
-            return -1;
-        }
-
+    
+    do {
+        
         halfIndex = (firstIndex + lastIndex) / 2; // Atualiza o indice do meio
 
         // Verifica se a Matricula do aluno no indice do meio  igual aa Matricula procurado
@@ -100,7 +93,7 @@ int binaryFindStudentByMatricula(student students[], int numberOfStudents, int m
             }
         }
         executions++; // Incrementa o contador de execucoes
-    }
+    } while (firstIndex <= lastIndex);
 
     // Exibe o numero de execucoes e retorna -1 para indicar que o aluno no foi encontrado
     cout << "Finalizada com " << executions << " execucoes" << endl;
