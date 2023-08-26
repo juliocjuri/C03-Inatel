@@ -1,11 +1,11 @@
 /*
- * 1) Create a function that receives a student's registration number and returns their information
+ * 1) Create a function that receives a student's id number and returns their information
  * using binary search. Is it possible to create a binary search function that receives a student's
- * registration number and returns their information? If not, what would be the alternatives?
+ * id number and returns their information? If not, what would be the alternatives?
  * Justify your answer.
  *
  * Yes, it is possible to create. The answer is in the code below. In it, we can perform this search,
- * but the registration numbers must be in ascending order.
+ * but the id numbers must be in ascending order.
  *
  * 2) Create a function that receives a student's name and returns their information.
  * Is it possible to create a binary search function that receives a student's name and
@@ -97,7 +97,7 @@ int binaryFindStudentById(student students[], int numberOfStudents, int id)
 
 int main()
 {
-    int registrationToFindBinary = 5; // Student's ID to be searched using binary search
+    int idToFindBinary = 5; // Student's ID to be searched using binary search
 
     int numberOfStudents;
     cout << "Enter the number of students: " << endl;
@@ -110,13 +110,13 @@ int main()
         students[i] = createStudent(i);
 
     // Perform binary search for the student with the specified ID
-    int queryResult = binaryFindStudentById(students, numberOfStudents, registrationToFindBinary);
+    int queryResult = binaryFindStudentById(students, numberOfStudents, idToFindBinary);
 
     // Check if the search result was successful or not
     if (queryResult != -1)
         printStudentData(students, queryResult); // Print the data of the found student
     else
-        cout << "Binary search for ID " << registrationToFindBinary << " failed" << endl;
+        cout << "Binary search for ID " << idToFindBinary << " failed" << endl;
 
     return 0;
 }
