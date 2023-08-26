@@ -97,26 +97,26 @@ int binaryFindStudentById(student students[], int numberOfStudents, int id)
 
 int main()
 {
-    int matriculaToFindBinary = 5; // Id student's a ser procurado usando binary search
+    int registrationToFindBinary = 5; // Student's ID to be searched using binary search
 
     int numberOfStudents;
-    cout << "Insert Student's numero de alunos: " << endl;
-    cin >> numberOfStudents; // Insere o numero de alunos
+    cout << "Enter the number of students: " << endl;
+    cin >> numberOfStudents; // Enter the number of students
 
-    student students[numberOfStudents]; // Criacao de um array de alunos
+    student students[numberOfStudents]; // Creating an array of students
 
-    // Loop para criar e inserir informacoes de cada aluno
+    // Loop to create and input information for each student
     for (int i = 0; i < numberOfStudents; i++)
         students[i] = createStudent(i);
 
-    // Realiza a binary search pelo aluno com a Id especificado
-    int queryResult = binaryFindStudentById(students, numberOfStudents, matriculaToFindBinary);
+    // Perform binary search for the student with the specified ID
+    int queryResult = binaryFindStudentById(students, numberOfStudents, registrationToFindBinary);
 
-    // Verify if o resultado da search was bem-sucedido ou no
+    // Check if the search result was successful or not
     if (queryResult != -1)
-        printStudentData(students, queryResult); // Imprime os dados student's encontrado
+        printStudentData(students, queryResult); // Print the data of the found student
     else
-        cout << "Busca binaria pela Id " << matriculaToFindBinary << " falhou" << endl;
+        cout << "Binary search for ID " << registrationToFindBinary << " failed" << endl;
 
     return 0;
 }
